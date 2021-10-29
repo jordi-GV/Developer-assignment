@@ -4,11 +4,11 @@ On the server side, uses [json-server](https://github.com/facebook/create-react-
 ## Instalation notes
 ### React*-Bootstrap  
 
-npm install react-bootstrap bootstrap@5.1.3  
+### `npm install react-bootstrap bootstrap@5.1.3`  
 
 
 ### json-server
-npm install -g json-server   
+### `npm install -g json-server`   
 
 
 ## Available Scripts
