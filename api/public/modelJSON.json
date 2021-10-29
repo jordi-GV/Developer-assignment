@@ -1,0 +1,10 @@
+{
+    "advertisements": [
+      {
+        "id": 1,
+        "title": "Adv 1",
+        "valid_until": "date",
+        "link": "http://localhost:3000"
+      }
+    ]
+  }
