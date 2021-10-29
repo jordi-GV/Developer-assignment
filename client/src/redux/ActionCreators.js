@@ -20,7 +20,7 @@ export const advertisementsFailed = (errmess) => ({
   payload: errmess,
 });
 
-export const updetAdvertisement = (advertisement) => ({
+export const updateAdvertisement = (advertisement) => ({
   type: actionTypes.UPDATE_ADVERTISEMENTS,
   payload: advertisement,
 });
@@ -51,39 +51,7 @@ export const fetchAdvertisements = () => (dispatch) => {
     .catch((error) => dispatch(advertisementsFailed(error.message)));
 };
 
-export const putAdvertisement = (data, id) => (dispatch) => {
-  return fetch(`${baseUrl}advertisements/${id}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  })
-    .then(
-      (response) => {
-        if (response.ok) {
-          return response;
-        } else {
-          var error = new Error(
-            "Error " + response.status + ": " + response.statusText
-          );
-          error.response = response;
-          throw error;
-        }
-      },
-      (error) => {
-        throw error;
-      }
-    )
-    .then((response) => response.json())
-    .then((res) => dispatch(updetAdvertisement(res)))
-    .catch((error) => {
-      console.log("post advertisement", error.message);
-      alert("Your advertisement could not be posted\nError: " + error.message);
-    });
-};
 export const deleteAdvertisement = (id) => (dispatch) => {
-  console.log("ACTION /id", id, "/url=>", `${baseUrl}advertisements/${id}`);
   return fetch(`${baseUrl}advertisements/${id}`, {
     method: "DELETE",
     headers: {
@@ -109,7 +77,74 @@ export const deleteAdvertisement = (id) => (dispatch) => {
     .then((response) => response.json())
     .then((res) => dispatch(fetchAdvertisements()))
     .catch((error) => {
-      console.log("post advertisement:", error.message);
       alert("Your advertisement could not be posted\nError: " + error.message);
     });
 };
+
+
+
+
+/*
+/* TODO : to complete PUT / POST
+/**/ 
+export const putAdvertisement = (data, id) => (dispatch) => {
+  return fetch(`${baseUrl}advertisements/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  })
+    .then(
+      (response) => {
+        if (response.ok) {
+          return response;
+        } else {
+          var error = new Error(
+            "Error " + response.status + ": " + response.statusText
+          );
+          error.response = response;
+          throw error;
+        }
+      },
+      (error) => {
+        throw error;
+      }
+    )
+    .then((response) => response.json())
+    .then((res) => dispatch(updateAdvertisement(res)))
+    .catch((error) => {
+      alert("Your advertisement could not be posted\nError: " + error.message);
+    });
+};
+export const postAdvertisement = (data) => (dispatch) => {
+  return fetch(`${baseUrl}advertisements/`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  })
+    .then(
+      (response) => {
+        if (response.ok) {
+          return response;
+        } else {
+          var error = new Error(
+            "Error " + response.status + ": " + response.statusText
+          );
+          error.response = response;
+          throw error;
+        }
+      },
+      (error) => {
+        throw error;
+      }
+    )
+    .then((response) => response.json())
+/*     .then((res) => dispatch(updateAdvertisement(res)))
+ */    .catch((error) => {
+      alert("Your advertisement could not be posted\nError: " + error.message);
+    });
+};
+

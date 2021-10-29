@@ -26,8 +26,7 @@ class Main extends React.Component {
   }
   render() {
     const HomePage = () => {
-      return <Home 
-      advertisements ={this.props.advertisements}/>;
+      return <Home />;
     };
 
     const AboutPage = () => {

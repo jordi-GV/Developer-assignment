@@ -24,7 +24,7 @@ const Advertisements = (
       return { ...state, isLoading: false, errMess: action.payload };
 
     case actionTypes.UPDATE_ADVERTISEMENTS:
-      return state.map((adv) =>
+      return state.advertisements.map((adv) =>
         adv.id !== action.payload
           ? adv
           : {
