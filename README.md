@@ -30,7 +30,7 @@ Start JSON Server
 
  Open http://localhost:3004/advertisements to view it in the browser.
 
-## Request
+## API access data
 
 GET  
 
