@@ -2,7 +2,7 @@ This project was created with:
 
 React  
 
-React-Redux  
+React-Redux  https://react-redux.js.org/  
 
 React Bootstrap
  
@@ -14,6 +14,11 @@ json-server  https://github.com/typicode/json-server
 
 ## json server
 stand in folder **Advertisements/api**  
+Install JSON Server  
+
+``npm install -g json-server``  
+
+Start JSON Server  
 
 ``json-server --watch db.json --port 3004``
 
