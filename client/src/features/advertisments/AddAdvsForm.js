@@ -42,8 +42,8 @@ const AddAdvForm = () => {
 
   return (
     <section>
-      <h5 className="text-center">Add a New Advertisement</h5>
-      <Form>
+      <h5 className="text-center mt-1">Add a New Advertisement</h5>
+      <Form >
         <Form.Group className="mb-3" controlId="formAdv">
           <Form.Label>Title</Form.Label>
           <Form.Control
@@ -56,7 +56,7 @@ const AddAdvForm = () => {
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBValidUntil">
-          <Form.Label>valid_until</Form.Label>
+          <Form.Label>Valid until</Form.Label>
           <Form.Control
             type="date"
             name="advValid"
@@ -64,7 +64,6 @@ const AddAdvForm = () => {
             onChange={onValidUntilChanged}
             placeholder="valid_until"
           />
-          <Form.Text className="text-muted">valid_until</Form.Text>
         </Form.Group>
 
         <Form.Group
@@ -79,7 +78,7 @@ const AddAdvForm = () => {
         </Form.Group>
 
         <Button
-          className="mb-5"
+          className="mb-2"
           variant="warning"
           disabled={!canSave}
           onClick={onSaveAdvClicked}

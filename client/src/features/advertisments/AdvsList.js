@@ -9,7 +9,7 @@ import { selectAllAdvs, fetchAdvs } from "./advsSlice";
 
 const AdvExcerpt = ({ advertisement }) => {
   return (
-      <Card key={advertisement.id} className="">
+      <Card key={advertisement.id} className="my-5">
         <Card.Header as="h5">{advertisement.title}</Card.Header>
         <Card.Body>
           <Card.Title>Valid until: {advertisement.valid_until}</Card.Title>
@@ -23,7 +23,7 @@ const AdvExcerpt = ({ advertisement }) => {
             className="btn btn-outline-warning btn-sm mx-5"
             variant="outline-danger"
           >
-            View advertisement
+            View detail
           </Link>
         </Card.Body>
       </Card>
