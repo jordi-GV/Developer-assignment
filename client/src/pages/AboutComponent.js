@@ -8,6 +8,7 @@ function About() {
   return (
     <Container>
       <Row>
+        
         <Col className="info yellow my-5">
           <h3>React</h3>
           <p>stand in folder Advertisements/client</p>
@@ -24,6 +25,7 @@ function About() {
             to view it in the browser.
           </p>
         </Col>
+
         <Col className="info  my-5">
           <h3>json server</h3>
           <p>stand in folder Advertisements/api</p>
