@@ -14,9 +14,10 @@ class Header extends Component {
           <Navbar.Toggle aria-controls="responsive-navbar-nav navbarScroll " />
           <Navbar.Collapse id="responsive-navbar-nav navbarScroll">
             <Nav className="me-auto">
-              <Nav.Link href="./home">Home</Nav.Link>
-              <Nav.Link href="./contact">Contact</Nav.Link>
-              <Nav.Link href="./about">About</Nav.Link>
+              <Nav.Link href="/home">Home</Nav.Link>
+              <Nav.Link href="/table">Table</Nav.Link>
+              <Nav.Link href="/about">About</Nav.Link>
+
             </Nav>
             <Nav>
               <Nav.Link

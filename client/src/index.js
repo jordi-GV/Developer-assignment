@@ -6,6 +6,13 @@ import  store  from './redux/store';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 
+import { fetchAdvs } from './features/advertisments/advsSlice';
+
+
+
+store.dispatch(fetchAdvs());
+
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
