@@ -2,8 +2,8 @@
   "advertisements": [
     {
       "id": 1,
-      "title": "React Redux ",
-      "valid_until": "2021-11-07",
+      "title": "React Redux",
+      "valid_until": "2/17/2025",
       "link": "https://react-redux.js.org/"
     },
     {
@@ -29,6 +29,12 @@
       "title": "json-server_2",
       "valid_until": "6/25/2025",
       "link": "https://github.com/typicode/json-server"
+    },
+    {
+      "id": 6,
+      "title": "Github_2",
+      "valid_until": "6/25/2025",
+      "link": "https://github.com/"
     }
   ]
 }
