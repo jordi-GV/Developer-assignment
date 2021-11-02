@@ -39,7 +39,7 @@ export const SingleAdvPage = ({ match }) => {
       <article className="advertisement mt-3">
         <h2>{advertisement.title}</h2>
         <p>Title: {advertisement.title}</p>
-        <p>Valid until: {advertisement.link}</p>
+        <p>Valid until: {advertisement.valid_until}</p>
         <p>Link: {advertisement.link}</p>
       </article>
       <Button className="m-2 btn-sm"  onClick={toggle}>
