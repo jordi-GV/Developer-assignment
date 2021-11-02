@@ -1,16 +1,27 @@
 import React from "react";
+import Container from "react-bootstrap/esm/Container";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
 import AddAdvForm from "../features/advertisments/AddAdvsForm";
 import { AdvsList } from "../features/advertisments/AdvsList";
 
-
-
 function Home() {
   return (
     <React.Fragment>
-      <AddAdvForm />
-
-      <AdvsList />
+      <Container>
+        <Row>
+          <Col className="info my-2">
+            <h1>Advertisements</h1>
+          </Col>
+          <Col className="blue my-2">
+            <AddAdvForm />
+          </Col>
+        </Row>
+        <Row>
+          <AdvsList />
+        </Row>
+      </Container>
     </React.Fragment>
   );
 }

@@ -56,8 +56,7 @@ export const AdvsList = () => {
 
   return (
     <section className="advs-list">
-      <h2>Advertisements</h2>
-      <Row xs={1} md={2} className="g-4">
+      <Row xs={1} md={3} className="g-4">
         {content}
         </Row>
     </section>

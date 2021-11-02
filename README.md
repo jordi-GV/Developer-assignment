@@ -31,7 +31,7 @@ Open [http://localhost:3004/advertisements](http://localhost:3004/advertisements
 
 
 
-# API access data
+# json-server access data
 
 GET
 

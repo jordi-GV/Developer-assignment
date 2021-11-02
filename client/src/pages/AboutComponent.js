@@ -8,7 +8,7 @@ function About() {
   return (
     <Container>
       <Row>
-        <Col className="info my-5">
+        <Col className="info yellow my-5">
           <h3>React</h3>
           <p>stand in folder Advertisements/client</p>
           <p>$ npm start</p>
@@ -24,7 +24,7 @@ function About() {
             to view it in the browser.
           </p>
         </Col>
-        <Col className="info blue my-5">
+        <Col className="info  my-5">
           <h3>json server</h3>
           <p>stand in folder Advertisements/api</p>
           <p>$ json-server --watch db.json --port 3004</p>

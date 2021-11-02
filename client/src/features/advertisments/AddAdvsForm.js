@@ -42,10 +42,10 @@ const AddAdvForm = () => {
 
   return (
     <section>
-      <h2>Add a New Advertisement</h2>
+      <h5 className="text-center">Add a New Advertisement</h5>
       <Form>
         <Form.Group className="mb-3" controlId="formAdv">
-          <Form.Label>Advertisment</Form.Label>
+          <Form.Label>Title</Form.Label>
           <Form.Control
             type="text"
             name="advTitle"
@@ -80,11 +80,11 @@ const AddAdvForm = () => {
 
         <Button
           className="mb-5"
-          variant="primary"
+          variant="warning"
           disabled={!canSave}
           onClick={onSaveAdvClicked}
         >
-          Save Advertisement
+          Save 
         </Button>
       </Form>
     </section>
