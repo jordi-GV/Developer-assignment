@@ -11,7 +11,7 @@ function Home() {
     <React.Fragment>
       <Container>
         <Row>
-          <Col className="info my-2">
+          <Col className=" my-5">
             <h1>Advertisements</h1>
           </Col>
           <Col className="blue my-2">
