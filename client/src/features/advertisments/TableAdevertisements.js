@@ -65,19 +65,19 @@ function TableAdvs() {
     }
   }, [advStatus, dispatch]);
 
-  let content;
+  let content
 
   if (advStatus === "loading") {
     content = <p>"Loading..." </p>;
-  } else if (advStatus === "succeeded" && advertisements) {
-    content = tableAdvertisements(advertisements, dispatch);
   } else if (advStatus === "failed") {
     content = <div>{error}</div>;
   }
+
   return (
     <React.Fragment>
       <Container>
-        <h6 className="mt-5">Advertisements Table</h6>
+        <h6 className="mt-5 mb-3">Advertisements Table</h6>
+        <h5>{content}</h5>
         <Table striped bordered hover responsive>
           <thead>
             <tr>
