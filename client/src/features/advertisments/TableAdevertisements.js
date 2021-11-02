@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectAllAdvs, fetchAdvs, deleteAdv } from "./advsSlice";
 
 
-function tableAdvertisements(advs, dispatch) {
+function tableAdvertisements(advertisements, dispatch) {
   const onDeleteClicked = async (idAdv) => {
     if (idAdv) {
       try {
@@ -20,23 +20,23 @@ function tableAdvertisements(advs, dispatch) {
     }
   };
 
-  return advs.map((adv) => (
-    <tr key={adv.id}>
-      <td>{adv.id}</td>
-      <td>{adv.title}</td>
-      <td>{adv.valid_until}</td>
+  return advertisements.map((advertisement) => (
+    <tr key={advertisement.id}>
+      <td>{advertisement.id}</td>
+      <td>{advertisement.title}</td>
+      <td>{advertisement.valid_until}</td>
       <td>
         <Container>
           <Row>
             <Col sm={11}>
-              <a href={adv.link} target="_blank" rel="noreferrer">
-                {adv.link}
+              <a href={advertisement.link} target="_blank" rel="noreferrer">
+                {advertisement.link}
               </a>
             </Col>
             <Col sm={1}>
               <span
                 variant="outline-danger"
-                onClick={() => dispatch(onDeleteClicked(adv.id))}
+                onClick={() => dispatch(onDeleteClicked(advertisement.id))}
               >
                 <img
                   src="/assets/images/icons8-papelera.png"
@@ -54,7 +54,7 @@ function tableAdvertisements(advs, dispatch) {
 
 function TableAdvs() {
   const dispatch = useDispatch();
-  const advs = useSelector(selectAllAdvs);
+  const advertisements = useSelector(selectAllAdvs);
 
   const advStatus = useSelector((state) => state.advs.status);
   const error = useSelector((state) => state.advs.error);
@@ -69,8 +69,8 @@ function TableAdvs() {
 
   if (advStatus === "loading") {
     content = <p>"Loading..." </p>;
-  } else if (advStatus === "succeeded" && advs) {
-    content = tableAdvertisements(advs, dispatch);
+  } else if (advStatus === "succeeded" && advertisements) {
+    content = tableAdvertisements(advertisements, dispatch);
   } else if (advStatus === "failed") {
     content = <div>{error}</div>;
   }
@@ -87,7 +87,7 @@ function TableAdvs() {
               <th>link</th>
             </tr>
           </thead>
-          <tbody>{tableAdvertisements(advs, dispatch)}</tbody>
+          <tbody>{tableAdvertisements(advertisements, dispatch)}</tbody>
         </Table>
       </Container>
     </React.Fragment>

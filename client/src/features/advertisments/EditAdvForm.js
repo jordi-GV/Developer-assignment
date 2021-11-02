@@ -7,7 +7,7 @@ import { advEdited } from "./advsSlice";
 export const EditAdvForm = ({advId}) => {
   console.log('MATCH',advId)
   const adv = useSelector((state) =>
-    state.advs.advs.find((a) => String(a.id) === String(advId))
+    state.advs.advs.find((advertisement) => String(advertisement.id) === String(advId))
   );
   const [title, setTitle] = useState(adv.title);
   const [valid_until, setValidUntil] = useState(adv.valid_until);
@@ -31,7 +31,7 @@ export const EditAdvForm = ({advId}) => {
   }
   return (
     <section>
-      <h3 className="mt-3 mx-5">Edit Adv</h3>
+      <h3 className="mt-3 mx-5">Edit Advertisement</h3>
       <Form>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Advertisment</Form.Label>

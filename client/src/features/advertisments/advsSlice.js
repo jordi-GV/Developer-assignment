@@ -1,18 +1,24 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+
 import { baseUrl } from "../../shared/baseUrl";
 
+
+
+const ADVERTISEMENTS_URL = baseUrl + 'advertisements'
 const initialState = {
   advs: [],
   status: "idle",
   error: null,
 };
 
+
+
 export const fetchAdvs = createAsyncThunk("advs/fetchAdvs", () => {
-  return fetch(`${baseUrl}advertisements`).then((response) => response.json());
+  return fetch(`${ADVERTISEMENTS_URL}`).then((response) => response.json());
 });
 
 export const addNewAdv = createAsyncThunk("advs/addNewAdv", (data) => {
-  return fetch(`${baseUrl}advertisements`, {
+  return fetch(`${ADVERTISEMENTS_URL}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -22,7 +28,7 @@ export const addNewAdv = createAsyncThunk("advs/addNewAdv", (data) => {
 });
 
 export const advEdited = createAsyncThunk("advs/addNewAdv", (data) => {
-  return fetch(`${baseUrl}advertisements/${data.id}`, {
+  return fetch(`${ADVERTISEMENTS_URL}/${data.id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -32,7 +38,7 @@ export const advEdited = createAsyncThunk("advs/addNewAdv", (data) => {
 });
 
 export const deleteAdv = createAsyncThunk("advs/deleteAdv", (id) => {
-  return fetch(`${baseUrl}advertisements/${id}`, {
+  return fetch(`${ADVERTISEMENTS_URL}/${id}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
@@ -41,7 +47,7 @@ export const deleteAdv = createAsyncThunk("advs/deleteAdv", (id) => {
 });
 
 
-/* Reducer */
+
 const advsSlice = createSlice({
   name: "advs",
   initialState,
@@ -88,19 +94,6 @@ const advsSlice = createSlice({
         state.error = action.error.message;
       });
 
-/*     builder
-      .addCase(advEdited.pending, (state, action) => {
-        state.status = "loading";
-      })
-      .addCase(advEdited.fulfilled, (state, action) => {
-        state.advs.advs +=  action.payload;
-        state.status = "idle";
-      })
-      .addCase(advEdited.rejected, (state, action) => {
-        state.status = "failed";
-        state.error = action.error.message;
-      }); */
-
       builder
       .addCase(deleteAdv.pending, (state, action) => {
         state.status = "loading";
@@ -114,6 +107,9 @@ const advsSlice = createSlice({
       })
   },
 });
+
+
+
 export const { advAdded, advUpdated } = advsSlice.actions;
 export default advsSlice.reducer;
 

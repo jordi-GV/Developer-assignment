@@ -6,29 +6,32 @@ import Row from "react-bootstrap/Row";
 
 import { selectAllAdvs, fetchAdvs } from "./advsSlice";
 
-const AdvExcerpt = ({ adv }) => {
+
+const AdvExcerpt = ({ advertisement }) => {
   return (
-      <Card key={adv.id} className="">
-        <Card.Header as="h5">{adv.title}</Card.Header>
+      <Card key={advertisement.id} className="">
+        <Card.Header as="h5">{advertisement.title}</Card.Header>
         <Card.Body>
-          <Card.Title>Valid until: {adv.valid_until}</Card.Title>
+          <Card.Title>Valid until: {advertisement.valid_until}</Card.Title>
           <Card.Text>
-            <a href={adv.link} target="_blank"  rel="noreferrer">
-              {adv.link}
+            <a href={advertisement.link} target="_blank"  rel="noreferrer">
+              {advertisement.link}
             </a>{" "}
           </Card.Text>
           <Link
-            to={`/advs/${adv.id}`}
+            to={`/advs/${advertisement.id}`}
             className="btn btn-outline-warning btn-sm mx-5"
             variant="outline-danger"
           >
-            View Adv
+            View advertisement
           </Link>
         </Card.Body>
       </Card>
 
   );
 };
+
+
 export const AdvsList = () => {
   const dispatch = useDispatch();
   const advs = useSelector(selectAllAdvs);
@@ -46,14 +49,14 @@ export const AdvsList = () => {
   if (advStatus === "loading") {
     content = <p>"Loading..." </p>;
   } else if (advStatus === "succeeded" && advs) {
-    content = advs.map((adv) => <AdvExcerpt key={adv.id} adv={adv} />);
+    content = advs.map((advertisement) => <AdvExcerpt key={advertisement.id} advertisement={advertisement} />);
   } else if (advStatus === "failed") {
     content = <div>{error}</div>;
   }
 
   return (
     <section className="advs-list">
-      <h2>Advs</h2>
+      <h2>Advertisements</h2>
       <Row xs={1} md={2} className="g-4">
         {content}
         </Row>
